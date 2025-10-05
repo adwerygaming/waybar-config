@@ -52,24 +52,32 @@
 
     "cpu": {
         "interval": 1,
-        "format": "   {usage}% | {avg_frequency}Ghz"
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "CPU: {usage}% | {avg_frequency}Ghz"
     },
 
     "memory": {
         "interval": 1,
-        "format": "   {}% | {used} GiB"
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Memory: {}% | {used} GiB"
     },
 
     "disk": {
         "path": "/",
         "interval": 1,
-        "format": "   {}% | {used}"
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "Disk (/): {}% | {used}"
     },
 
     "backlight": {
         "scroll-step": 5,
         "// device": "acpi_video1",
-        "format": "{icon}  {percent}%",
+        "format": "{icon}",
+        "tooltip": true,
+        "tooltip-format": "Brightness: {percent}%",
         "format-icons": ["", ""]
     },
 
@@ -90,7 +98,9 @@
 
     "network": {
         "interval": 5,
-        "format": "{ifname}",
+        "format": "",
+        "tooltip": true,
+        "tooltip-format": "{ifname} / {ipaddr}/{cidr} - {essid} ({signalStrength}%)",
         "format-wifi": "   {essid} ({signalStrength}%)",
         "format-ethernet": "  | {ifname}: {ipaddr}/{cidr}",
         "format-linked": "  | {ifname} (No IP) ",
@@ -103,7 +113,8 @@
     "pulseaudio": {
         "tooltip": true,
         "scroll-step": 5,
-        "format": "{icon} {volume}% {format_source}",
+        "format": "{icon}",
+        "tooltip-format": "{icon} {volume}% {format_source}",
         "format-bluetooth": " {volume}% {format_source}",
         "format-bluetooth-muted": " MUTED",
         "format-muted": " MUTED",
@@ -124,17 +135,18 @@
     },
 
     "bluetooth": {
-        "format": "{icon} {status}",
+        "format": "{icon}",
         "format-disabled": "", 
         "format-connected": " {device_alias}",
         "format-on": "",
         "format-off": "",
         "interval": 30,
+        "tooltip": true,
+        "tooltip-format": "Connected to {device_alias}",
         "format-icons": {
             "enabled": "",
             "disabled": ""
         },
-        "tooltip-format": "Connected to {device_alias}",
         "tooltip-format-on": "Bluetooth is {status}",
         "on-click": "blueman-manager"
     },
