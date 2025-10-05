@@ -1,0 +1,156 @@
+{
+    "layer": "top", 
+    "output": "eDP-1",
+    "position": "top",
+    "modules-left": ["hyprland/workspaces", "sway/window"],
+    "modules-right": ["group/hardware", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "clock", "tray"],
+
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon} {name} {icon}",
+        "format-icons": {
+            "active": "      ",
+            "default": "",
+            "urgent": "*"
+        }
+    },
+
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 40
+    },
+
+    "group/hardware": {
+		"orientation": "horizontal",
+		"modules": [
+			"cpu",
+			"memory",
+			"disk"
+		]
+	},
+
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+
+    "custom/spotify": {
+        "format": "{icon} {}  ",
+        "escape": true,
+        "return-type": "json",
+        "max-length": 40,
+        "on-click": "playerctl -p spotify play-pause",
+        "on-click-right": "killall spotify",
+        "exec": "$HOME/.config/waybar/modules/mediaplayer.py --player spotify 2> /dev/null",
+        "exec-if": "pgrep spotify"
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 1
+    },
+
+    "clock": {
+        "timezone": "Asia/Jakarta",
+        "format": "{:%a, %d %b %C%y | %r}",
+        "format-alt": "{:%H:%M %Z}",
+        "tooltip": false,
+        "interval": 1
+    },
+
+    "cpu": {
+        "interval": 1,
+        "format": "   {usage}% | {avg_frequency}Ghz"
+    },
+
+    "memory": {
+        "interval": 1,
+        "format": "   {}% | {used} GiB"
+    },
+
+    "disk": {
+        "path": "/",
+        "interval": 1,
+        "format": "   {}% | {used}"
+    },
+
+    "backlight": {
+        "// device": "acpi_video1",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", ""]
+    },
+
+    "battery": {
+        "format": "{icon}   {capacity}% {time}",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "- {H}h{M}m left",
+        "format-charging": " {capacity}% - {time} till full",
+        "format-full": " {icon}",
+        "interval": 5,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": true,
+        "on-click": "2"
+    },
+
+    "network": {
+        "interval": 5,
+        "format": "{ifname}",
+        "format-wifi": "   {essid} ({signalStrength}%)",
+        "format-ethernet": "  | {ifname}: {ipaddr}/{cidr}",
+        "format-linked": "  | {ifname} (No IP) ",
+        "format-disconnected": "Not Connected :(",
+        "on-click-right": "alacritty -o 'window.startup_mode=\"Fullscreen\"' -e bash -ci nmtui",
+        "// on-click": "alacritty -o 'window.startup_mode=\"Fullscreen\"' -e bash -ci what",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+        "tooltip": true,
+        "scroll-step": 5,
+        "format": "{icon} {volume}% {format_source}",
+        "format-bluetooth": " {volume}% {format_source}",
+        "format-bluetooth-muted": " MUTED",
+        "format-muted": " MUTED",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click-right": "pavucontrol",
+        "on-click-middle": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
+
+    "bluetooth": {
+        "format": "{icon} {status}",
+        "format-disabled": "", 
+        "format-connected": " {device_alias}",
+        "format-on": "",
+        "format-off": "",
+        "interval": 30,
+        "format-icons": {
+            "enabled": "",
+            "disabled": ""
+        },
+        "tooltip-format": "Connected to {device_alias}",
+        "tooltip-format-on": "Bluetooth is {status}",
+        "on-click": "blueman-manager"
+    }
+}
