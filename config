@@ -16,11 +16,6 @@
         }
     },
 
-    "sway/window": {
-        "format": "{title}",
-        "max-length": 40
-    },
-
     "group/hardware": {
 		"orientation": "horizontal",
 		"modules": [
@@ -153,5 +148,10 @@
         "tooltip-format": "Connected to {device_alias}",
         "tooltip-format-on": "Bluetooth is {status}",
         "on-click": "blueman-manager"
+    },
+    "sway/window": {
+        "format": "{title}",
+        "max-length": 40,
+        "tooltip": false
     }
 }
