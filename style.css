@@ -76,7 +76,7 @@ window#waybar.empty #window {
 /* Make the active workspace more prominent */
 #workspaces button.focused {
     font-weight: 700;
-    font-size: 15px;
+    font-size: 30px;
 }
 
 #workspaces button.urgent {
