@@ -8,9 +8,9 @@
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
-        "format": "{icon} {name} {icon}",
+        "format": "{name} {icon}",
         "format-icons": {
-            "active": "      ",
+            "active": "",
             "default": "",
             "urgent": "*"
         }
@@ -73,13 +73,13 @@
 
     "memory": {
         "interval": 1,
-        "format": "   {}% | {used} GiB"
+        "format": "   {}% | {used} GiB"
     },
 
     "disk": {
         "path": "/",
         "interval": 1,
-        "format": "   {}% | {used}"
+        "format": "   {}% | {used}"
     },
 
     "backlight": {
