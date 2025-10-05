@@ -155,9 +155,12 @@
     "custom/window": {
         "exec": "/home/masdepan/.config/waybar/modules/active_window.sh",
         "interval": 1,
-        "format": "{} {text}",
+        "format": "{text}",
         "max-length": 67,
-        "icon": true,
-        "tooltip": true
+        "tooltip": true,
+        "rewrite": {
+            "(.*) - Mozilla Firefox": "🌎 $1",
+            "(.*) - Visual Studio Code": "🐞 $1"
+        }
     }
 }
