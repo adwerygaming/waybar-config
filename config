@@ -4,7 +4,7 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "custom/window"],
     "modules-center": ["clock"],
-    "modules-right": ["group/hardware", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "tray"],
+    "modules-right": ["group/hardware", "idle_inhibitor", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -30,12 +30,12 @@
         "format": "<span style=\"italic\">{}</span>"
     },
 
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
+    "custom/idle-inhibitor": {
+        "format": "{}",
+        "exec": "~/.config/waybar/modules/toggle-idle.sh",
+        "on-click": "~/.config/waybar/modules/toggle-idle.sh",
+        "signal": 8,
+        "tooltip": true
     },
 
     "tray": {
