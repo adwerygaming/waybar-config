@@ -3,7 +3,7 @@
     "output": "eDP-1",
     "position": "top",
     "modules-left": ["hyprland/workspaces"],
-    "modules-middle": ["custom/window"],
+    "modules-center": ["custom/window"],
     "modules-right": ["group/hardware", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "clock", "tray"],
 
     "hyprland/workspaces": {
