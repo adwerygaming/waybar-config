@@ -77,6 +77,11 @@ window#waybar.empty #window {
     background-color: @alert-bg-color;
 }
 
+#custom-window {
+    padding: 0 4px;
+    margin: 0 4px;
+}
+
 #mode {
     padding: 0 4px;
     margin: 0 4px;
