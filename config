@@ -52,14 +52,14 @@
 
     "cpu": {
         "interval": 1,
-        "format": "",
+        "format": "  {usage}%",
         "tooltip": true,
         "tooltip-format": "CPU: {usage}% | {avg_frequency}Ghz"
     },
 
     "memory": {
         "interval": 1,
-        "format": "",
+        "format": "  {}%",
         "tooltip": true,
         "tooltip-format": "Memory: {}% | {used} GiB"
     },
@@ -67,7 +67,7 @@
     "disk": {
         "path": "/",
         "interval": 1,
-        "format": "",
+        "format": " {}%",
         "tooltip": true,
         "tooltip-format": "Disk (/): {}% | {used}"
     },
@@ -101,7 +101,7 @@
         "format": "",
         "tooltip": true,
         "tooltip-format": "{ifname} / {ipaddr}/{cidr} - {essid} ({signalStrength}%)",
-        "format-wifi": "   {essid} ({signalStrength}%)",
+        "format-wifi": " ",
         "format-ethernet": "  | {ifname}: {ipaddr}/{cidr}",
         "format-linked": "  | {ifname} (No IP) ",
         "format-disconnected": "Not Connected :(",
