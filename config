@@ -156,6 +156,7 @@
         "exec": "/home/masdepan/.config/waybar/modules/active_window.sh",
         "interval": 1,
         "format": "{}",
+        "max-length": 67,
         "tooltip": false
     }
 }
