@@ -155,8 +155,9 @@
     "custom/window": {
         "exec": "/home/masdepan/.config/waybar/modules/active_window.sh",
         "interval": 1,
-        "format": "{icon} {}",
+        "format": "{} {text}",
         "max-length": 67,
+        "icon": true,
         "tooltip": true
     }
 }
