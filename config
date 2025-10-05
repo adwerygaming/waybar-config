@@ -2,7 +2,7 @@
     "layer": "top", 
     "output": "eDP-1",
     "position": "top",
-    "modules-left": ["hyprland/workspaces", "sway/window"],
+    "modules-left": ["hyprland/workspaces", "custom/window"],
     "modules-right": ["group/hardware", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "clock", "tray"],
 
     "hyprland/workspaces": {
@@ -27,17 +27,6 @@
 
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
-    },
-
-    "custom/spotify": {
-        "format": "{icon} {}  ",
-        "escape": true,
-        "return-type": "json",
-        "max-length": 40,
-        "on-click": "playerctl -p spotify play-pause",
-        "on-click-right": "killall spotify",
-        "exec": "$HOME/.config/waybar/modules/mediaplayer.py --player spotify 2> /dev/null",
-        "exec-if": "pgrep spotify"
     },
 
     "idle_inhibitor": {
@@ -149,9 +138,10 @@
         "tooltip-format-on": "Bluetooth is {status}",
         "on-click": "blueman-manager"
     },
-    "sway/window": {
-        "format": "{title}",
-        "max-length": 40,
+    "custom/window": {
+        "exec": "/home/masdepan/.config/waybar/modules/active_window.sh",
+        "interval": 1,
+        "format": "{}",
         "tooltip": false
     }
 }
