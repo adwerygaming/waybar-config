@@ -73,6 +73,12 @@ window#waybar.empty #window {
     border-bottom: 3px solid @fg-color;
 }
 
+/* Make the active workspace more prominent */
+#workspaces button.focused {
+    font-weight: 700;
+    font-size: 15px;
+}
+
 #workspaces button.urgent {
     background-color: @alert-bg-color;
 }
