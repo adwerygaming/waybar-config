@@ -60,7 +60,7 @@
 
     "clock": {
         "timezone": "Asia/Jakarta",
-        "format": "{:%a, %d %b %C%y | %r}",
+        "format": "{:%a, %d %b %C%y  %r}",
         "format-alt": "{:%H:%M %Z}",
         "tooltip": false,
         "interval": 1
