@@ -4,7 +4,7 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "custom/window"],
     "modules-center": ["clock"],
-    "modules-right": ["group/hardware", "idle_inhibitor", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "tray"],
+    "modules-right": ["custom/idle_state", "group/hardware", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": true,
@@ -76,7 +76,7 @@
     "backlight": {
         "scroll-step": 5,
         "// device": "acpi_video1",
-        "format": "{icon}",
+        "format": "{icon}  {percent}%",
         "tooltip": true,
         "tooltip-format": "Brightness: {percent}%",
         "format-icons": ["", ""]
@@ -102,23 +102,21 @@
         "format": "",
         "tooltip": true,
         "tooltip-format": "{ifname} / {ipaddr}/{cidr} - {essid} ({signalStrength}%)",
-        "format-wifi": " ",
-        "format-ethernet": "  | {ifname}: {ipaddr}/{cidr}",
-        "format-linked": "  | {ifname} (No IP) ",
+        "format-wifi": "   {essid}",
+        "format-ethernet": "  {ipaddr}",
+        "format-linked": "   No IP",
         "format-disconnected": "Not Connected :(",
-        "on-click-right": "alacritty -o 'window.startup_mode=\"Fullscreen\"' -e bash -ci nmtui",
-        "// on-click": "alacritty -o 'window.startup_mode=\"Fullscreen\"' -e bash -ci what",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-alt": "   {ifname}: {ipaddr}/{cidr}"
     },
 
     "pulseaudio": {
         "tooltip": true,
         "scroll-step": 5,
-        "format": "{icon}",
-        "tooltip-format": "{icon} {volume}% {format_source}",
+        "format": "{icon}  {volume}%",
+        "tooltip-format": "{icon}  {volume}% {format_source}",
         "format-bluetooth": " {volume}% {format_source}",
-        "format-bluetooth-muted": " MUTED",
-        "format-muted": " MUTED",
+        "format-bluetooth-muted": "",
+        "format-muted": "",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
@@ -138,7 +136,7 @@
     "bluetooth": {
         "format": "{icon}",
         "format-disabled": "", 
-        "format-connected": " {device_alias}",
+        "format-connected": "  {device_alias}",
         "format-on": "",
         "format-off": "",
         "interval": 30,
@@ -162,5 +160,17 @@
             "(.*) - Mozilla Firefox": "🌎 $1",
             "(.*) - Visual Studio Code": "🐞 $1"
         }
+    },
+    "custom/idle_state": {
+        "exec": "/home/masdepan/.config/waybar/modules/get_idle_state.sh",
+        "interval": 1,
+        "return-type": "json",
+        "format": "{icon}   {text}",
+        "format-icons": {
+            "idle": "󰒲",
+            "active": "󰈆"
+        },
+        "max-length": 67,
+        "tooltip": true
     }
 }
