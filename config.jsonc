@@ -47,10 +47,27 @@
         "timezone": "Asia/Jakarta",
         "format": "{:%a, %d %b %C%y   %r}",
         "format-alt": "{:%H:%M %Z}",
-        "tooltip": false,
-        "interval": 1
+        "tooltip": true,
+        "tooltip-format": "{calendar}\n\n  {:%A, %d/%m/%Y}",
+        "interval": 1,
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+            "on-scroll": 1,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
     },
-
     "cpu": {
         "interval": 1,
         "format": "  {usage}%",
@@ -70,7 +87,7 @@
         "interval": 1,
         "format": " {}%",
         "tooltip": true,
-        "tooltip-format": "Disk (/): {}% | {used}"
+        "tooltip-format": "Disk (/): {}% | {percentage_used}% used, {used} out of {total}"
     },
 
     "backlight": {

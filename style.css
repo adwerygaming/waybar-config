@@ -85,7 +85,6 @@ window#waybar.empty #window {
     color: @fg-color;
 }
 
-
 #clock {
     padding: 0 2px;
     margin: 0 4px;
