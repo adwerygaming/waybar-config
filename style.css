@@ -1,13 +1,13 @@
-@define-color bg-color rgb(0,0,0);               /* #3C413C */
-@define-color bg-color-tray rgb (0,0,0);         /* #3C4144 */
-@define-color bg-color-0 rgb (0,0,0);            /* #3C4144 */
-@define-color bg-color-1 rgb(40, 42, 54);            /* #475f94 */
+@define-color bg-color rgb(0,0,0);
+@define-color bg-color-tray rgb (0,0,0);
+@define-color bg-color-0 rgb (0,0,0);
+@define-color bg-color-1 rgb(40, 42, 54);
 
-@define-color fg-color rgb (248, 248, 242);           /* #f3f4f5 */
-@define-color alert-bg-color rgb (255, 85, 85);       /* #bd2c40 */
-@define-color alert-fg-color rgb (248, 248, 242);       /* #FFFFFF */
-@define-color inactive-fg-color rgb(144, 153, 162);   /* #9099a2 */
-@define-color inactive-bg-color rgb(68, 71, 90);      /* #404552 */
+@define-color fg-color rgb (248, 248, 242);
+@define-color alert-bg-color rgb (255, 85, 85);
+@define-color alert-fg-color rgb (248, 248, 242);
+@define-color inactive-fg-color rgb(144, 153, 162);
+@define-color inactive-bg-color rgb(68, 71, 90);
 
 * {
     border: none;
@@ -19,7 +19,7 @@
 }
 
 window#waybar {
-    background-color: @bg-color-0;  
+    background-color: @bg-color-0;
 }
 
 window#waybar.empty {
