@@ -121,7 +121,7 @@
         "tooltip-format": "{ifname} / {ipaddr}/{cidr}",
         "tooltip-format-ethernet": "󰈀 Connected to Ethernet.\n{ifname} / {ipaddr}/{cidr}",
         "tooltip-format-wifi": "  Connected to Wifi.\n{ifname} / {ipaddr}/{cidr} - {essid} ({signalStrength}%)",
-        "format-wifi": "   {essid} ({frequency})",
+        "format-wifi": "   {essid} ({frequency}Ghz)   {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-ethernet": "󰈀 {ipaddr}   {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-linked": "󰈀  No IP",
         "format-disconnected": "Not Connected :(",
