@@ -4,10 +4,10 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "custom/window"],
     "modules-center": ["clock"],
-    "modules-right": ["group/hardware", "network", "bluetooth","pulseaudio", "custom/kbd", "backlight", "battery", "tray"],
+    "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "backlight", "battery", "tray"],
 
     "hyprland/workspaces": {
-        "disable-scroll": true,
+        "disable-scroll": false,
         "all-outputs": true,
         "format": "{name} {icon}",
         "format-icons": {
@@ -45,7 +45,7 @@
 
     "clock": {
         "timezone": "Asia/Jakarta",
-        "format": "{:%a, %d %b %C%y   %r}",
+        "format": "{:%r   %d/%m/%Y}",
         "format-alt": "{:%H:%M %Z}",
         "tooltip": true,
         "tooltip-format": "{calendar}\n\n  {:%A, %d/%m/%Y}",
@@ -115,7 +115,7 @@
     },
 
     "network": {
-        "interval": 5,
+        "interval": 1,
         "format": "",
         "tooltip": true,
         "tooltip-format": "{ifname} / {ipaddr}/{cidr}",
@@ -179,17 +179,5 @@
             "(.*) - Mozilla Firefox": "🌎 $1",
             "(.*) - Visual Studio Code": "🐞 $1"
         }
-    },
-    "custom/idle_state": {
-        "exec": "/home/masdepan/.config/waybar/modules/get_idle_state.sh",
-        "interval": 1,
-        "return-type": "json",
-        "format": "{icon}   {text}",
-        "format-icons": {
-            "idle": "󰒲",
-            "active": "󰈆"
-        },
-        "max-length": 67,
-        "tooltip": true
     }
 }
