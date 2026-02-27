@@ -94,7 +94,7 @@ window#waybar.empty #window {
 
 #tray {
     padding: 0 2px;
-    margin: 0 4px;
+    margin: 0 2px;
     background-color: @bg-color-tray;
     color: @fg-color;
 }
@@ -308,4 +308,22 @@ label:focus {
 
 #temperature.critical {
     background-color: @alert-bg-color;
+}
+
+#cpu.warning,
+#memory.warning {
+    background-color: rgba(255, 165, 0, 0.8);
+    color: @fg-color;
+}
+
+#cpu.critical,
+#memory.critical,
+#disk.critical {
+    background-color: @alert-bg-color;
+    color: @fg-color;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }

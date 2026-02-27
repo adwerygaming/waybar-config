@@ -74,11 +74,16 @@
             "on-scroll-down": "shift_down"
         }
     },
+
     "cpu": {
         "interval": 1,
         "format": "  {usage}%",
         "tooltip": true,
         "tooltip-format": "CPU: {usage}% | {avg_frequency}Ghz",
+        "states": {
+            "warning": 60,
+            "critical": 80
+        },        
         "on-scroll-up": "",
         "on-scroll-down": ""
     },
@@ -88,17 +93,22 @@
         "format": "  {used} GiB",
         "tooltip": true,
         "tooltip-format": "Memory: {}% | {used} / {total} GiB",
+        "states": {
+            "warning": 60,
+            "critical": 80
+        },        
         "on-scroll-up": "",
         "on-scroll-down": ""
     },
-    
+
     "disk": {
         "path": "/",
         "interval": 1,
         "format": " {free}",
         "tooltip": true,
-        "tooltip-format": "Disk (/): {}% | {percentage_used}% used, {used} out of {total} ({free} free)",
-        "on-scroll-up": "",
+        "tooltip-format": "Disk (/): {}% | {percentage_used}% used, {used} out of {total} ({free} free)",        "states": {
+            "critical": 97
+        },        "on-scroll-up": "",
         "on-scroll-down": ""
     },
 
