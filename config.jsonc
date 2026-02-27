@@ -4,7 +4,7 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "custom/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "backlight", "battery", "tray"],
+    "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "backlight", "battery", "custom/power", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": false,
@@ -36,6 +36,12 @@
         "on-click": "~/.config/waybar/modules/toggle-idle.sh",
         "signal": 8,
         "tooltip": true
+    },
+
+    "custom/power": {
+        "exec": "~/.config/waybar/modules/power.sh",
+        "interval": 2,
+        "tooltip": false
     },
 
     "tray": {
@@ -72,22 +78,28 @@
         "interval": 1,
         "format": "  {usage}%",
         "tooltip": true,
-        "tooltip-format": "CPU: {usage}% | {avg_frequency}Ghz"
+        "tooltip-format": "CPU: {usage}% | {avg_frequency}Ghz",
+        "on-scroll-up": "",
+        "on-scroll-down": ""
     },
 
     "memory": {
         "interval": 1,
-        "format": "  {}%",
+        "format": "  {used} GiB",
         "tooltip": true,
-        "tooltip-format": "Memory: {}% | {used} GiB"
+        "tooltip-format": "Memory: {}% | {used} / {total} GiB",
+        "on-scroll-up": "",
+        "on-scroll-down": ""
     },
-
+    
     "disk": {
         "path": "/",
         "interval": 1,
-        "format": " {}%",
+        "format": " {free}",
         "tooltip": true,
-        "tooltip-format": "Disk (/): {}% | {percentage_used}% used, {used} out of {total}"
+        "tooltip-format": "Disk (/): {}% | {percentage_used}% used, {used} out of {total} ({free} free)",
+        "on-scroll-up": "",
+        "on-scroll-down": ""
     },
 
     "backlight": {
@@ -123,7 +135,7 @@
         "tooltip-format-wifi": "  Connected to Wifi.\n{ifname} / {ipaddr}/{cidr} - {essid} ({signalStrength}%)",
         "format-wifi": "   {essid} ({frequency}Ghz)   {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-ethernet": "󰈀 {ipaddr}   {bandwidthDownBytes}  {bandwidthUpBytes}",
-        "format-linked": "󰈀  No IP",
+        "format-linked": "󰈀  No IP  {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-disconnected": "Not Connected :(",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
@@ -134,8 +146,8 @@
         "format": "{icon}  {volume}%",
         "tooltip-format": "{icon}  {volume}% {format_source}",
         "format-bluetooth": " {volume}% {format_source}",
-        "format-bluetooth-muted": "",
-        "format-muted": "",
+        "format-bluetooth-muted": "",
+        "format-muted": "",
         "format-source": " {volume}%",
         "format-source-muted": "",
         "format-icons": {
@@ -172,12 +184,8 @@
     "custom/window": {
         "exec": "/home/masdepan/.config/waybar/modules/active_window.sh",
         "interval": 1,
-        "format": "{text}",
+        "format": "{}",
         "max-length": 67,
-        "tooltip": true,
-        "rewrite": {
-            "(.*) - Mozilla Firefox": "🌎 $1",
-            "(.*) - Visual Studio Code": "🐞 $1"
-        }
+        "tooltip": true
     }
 }

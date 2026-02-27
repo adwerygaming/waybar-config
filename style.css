@@ -1,25 +1,40 @@
-@define-color bg-color rgb(0,0,0);
-@define-color bg-color-tray rgb (0,0,0);
-@define-color bg-color-0 rgb (0,0,0);
+@define-color bg-color rgb(0, 0, 0);
+@define-color bg-color-tray rgb(0, 0, 0);
+@define-color bg-color-0 rgb(0, 0, 0);
 @define-color bg-color-1 rgb(40, 42, 54);
+@define-color bg-color-2 rgb(0, 0, 0);
+@define-color bg-color-3 rgb(0, 0, 0);
+@define-color bg-color-4 rgb(0, 0, 0);
+@define-color bg-color-5 rgb(0, 0, 0);
+@define-color bg-color-6 rgb(0, 0, 0);
+@define-color bg-color-7 rgb(0, 0, 0);
+@define-color bg-color-8 rgb(0, 0, 0);
+@define-color bg-color-9 rgb(0, 0, 0);
+@define-color bg-color-10 rgb(0, 0, 0);
+@define-color bg-color-11 rgb(0, 0, 0);
+@define-color bg-color-12 rgb(0, 0, 0);
+@define-color bg-color-13 rgb(0, 0, 0);
+@define-color bg-color-14 rgb(0, 0, 0);
+@define-color bg-color-15 rgb(0, 0, 0);
+@define-color bg-color-16 rgb(0, 0, 0);
 
-@define-color fg-color rgb (248, 248, 242);
-@define-color alert-bg-color rgb (255, 85, 85);
-@define-color alert-fg-color rgb (248, 248, 242);
+@define-color fg-color rgb(248, 248, 242);
+@define-color alert-bg-color rgb(255, 85, 85);
+@define-color alert-fg-color rgb(248, 248, 242);
 @define-color inactive-fg-color rgb(144, 153, 162);
 @define-color inactive-bg-color rgb(68, 71, 90);
 
 * {
     border: none;
     border-radius: 0;
-    font-family: Dejavu Sans Mono, FontAwesome, Material Icons, sans-serif;
+    font-family: Dejavu Sans, FontAwesome, Material Icons, sans-serif;
     font-size: 13px;
     min-height: 26px;
     opacity: 1.0;
 }
 
 window#waybar {
-    background-color: @bg-color-0;
+    background-color: @bg-color-0
 }
 
 window#waybar.empty {
@@ -34,7 +49,7 @@ window#waybar.empty #window {
 }
 
 #workspaces {
-    background-color: @bg-color-0;
+    background-color: @bg-color-0
 }
 
 #workspaces button {
@@ -59,7 +74,6 @@ window#waybar.empty #window {
 /* Make the active workspace more prominent */
 #workspaces button.focused {
     font-weight: 700;
-    font-size: 30px;
 }
 
 #workspaces button.urgent {
@@ -203,20 +217,6 @@ window#waybar.empty #window {
     color: @fg-color;
 }
 
-#backlight {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-8;
-    color: @fg-color;
-}
-
-#pulseaudio {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-9;
-    color: @fg-color;
-}
-
 #custom-media {
     padding: 0 2px;
     margin: 0 4px;
@@ -308,24 +308,4 @@ label:focus {
 
 #temperature.critical {
     background-color: @alert-bg-color;
-}
-
-#idle_inhibitor.activated {
-    background-color: @fg-color;
-    color: @bg-color;
-}
-
-#mpd.disconnected {
-    background-color: transparent;
-    color: transparent;
-}
-
-#mpd.stopped {
-    background-color: transparent;
-    color: transparent;
-}
-
-#mpd.paused {
-    background-color: @inactive-bg-color;
-    color: @inactive-fg-color;
 }
