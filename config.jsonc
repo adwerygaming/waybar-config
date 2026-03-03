@@ -94,8 +94,8 @@
         "tooltip": true,
         "tooltip-format": "Memory: {}% | {used} / {total} GiB",
         "states": {
-            "warning": 60,
-            "critical": 80
+            "warning": 70,
+            "critical": 90
         },        
         "on-scroll-up": "",
         "on-scroll-down": ""
