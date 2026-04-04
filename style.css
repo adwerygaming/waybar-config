@@ -31,6 +31,7 @@
     font-size: 13px;
     min-height: 26px;
     opacity: 1.0;
+    color: white;
 }
 
 window#waybar {
@@ -106,27 +107,6 @@ window#waybar.empty #window {
     color: @fg-color;
 }
 
-#custom-weather {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-2;
-    color: @fg-color;
-}
-
-#custom-rdict {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-3;
-    color: @fg-color;
-}
-
-#custom-covid {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-16;
-    color: @fg-color;
-}
-
 #backlight {
     padding: 0 2px;
     margin: 0 4px;
@@ -196,31 +176,10 @@ window#waybar.empty #window {
     color: @fg-color;
 }
 
-#custom-wg {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-6;
-    color: @fg-color;
-}
-
 #pulseaudio {
     padding: 0 2px;
     margin: 0 4px;
     background-color: @bg-color-12;
-    color: @fg-color;
-}
-
-#temperature {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-7;
-    color: @fg-color;
-}
-
-#custom-media {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-10;
     color: @fg-color;
 }
 
@@ -243,39 +202,6 @@ window#waybar.empty #window {
     margin: 0 4px;
     background-color: @bg-color-5;
     color: @fg-color;
-}
-
-#idle_inhibitor {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-14;
-    color: @fg-color;
-}
-
-#mpd {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-15;
-    color: @fg-color;
-}
-
-#custom-spotify {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-15;
-    color: @fg-color;
-}
-
-#custom-kbd {
-    padding: 0 2px;
-    margin: 0 4px;
-    background-color: @bg-color-11;
-    color: @fg-color;
-}
-
-#custom-kbd.none {
-    background-color: transparent;
-    color: transparent;
 }
 
 @keyframes blink {

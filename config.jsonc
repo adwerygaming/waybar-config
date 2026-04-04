@@ -4,17 +4,12 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "custom/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "backlight", "battery", "custom/power", "tray"],
+    "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "custom/backlight", "battery", "custom/wattusage", "tray"],
 
     "hyprland/workspaces": {
         "disable-scroll": false,
         "all-outputs": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "active": "",
-            "default": "",
-            "urgent": "*"
-        }
+        "format": "{name}"
     },
 
     "group/hardware": {
@@ -26,10 +21,6 @@
 		]
 	},
 
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-
     "custom/idle-inhibitor": {
         "format": "{}",
         "exec": "~/.config/waybar/modules/toggle-idle.sh",
@@ -38,15 +29,10 @@
         "tooltip": true
     },
 
-    "custom/power": {
+    "custom/wattusage": {
         "exec": "~/.config/waybar/modules/power.sh",
         "interval": 2,
         "tooltip": false
-    },
-
-    "tray": {
-        "icon-size": 21,
-        "spacing": 1
     },
 
     "clock": {
@@ -83,7 +69,7 @@
         "states": {
             "warning": 60,
             "critical": 80
-        },        
+        },
         "on-scroll-up": "",
         "on-scroll-down": ""
     },
@@ -94,9 +80,9 @@
         "tooltip": true,
         "tooltip-format": "Memory: {}% | {used} / {total} GiB",
         "states": {
-            "warning": 70,
+            "warning": 87,
             "critical": 90
-        },        
+        },
         "on-scroll-up": "",
         "on-scroll-down": ""
     },
@@ -106,15 +92,23 @@
         "interval": 1,
         "format": " {free}",
         "tooltip": true,
-        "tooltip-format": "Disk (/): {}% | {percentage_used}% used, {used} out of {total} ({free} free)",        "states": {
+        "tooltip-format": "Disk (/): {percentage_used}% used | {used} out of {total} ({free} free)",        "states": {
             "critical": 97
-        },        "on-scroll-up": "",
+        },
+        "on-scroll-up": "",
         "on-scroll-down": ""
+    },
+
+    "custom/backlight": {
+        "interval": 1,
+        "exec": "./modules/comps/backlight.sh",
+        "on-click": "./modules/comps/backlight-set.sh flip",
+        "on-scroll-up": "./modules/comps/backlight-set.sh up",
+        "on-scroll-down": "./modules/comps/backlight-set.sh down"
     },
 
     "backlight": {
         "scroll-step": 5,
-        "// device": "acpi_video1",
         "format": "{icon}  {percent}%",
         "tooltip": true,
         "tooltip-format": "Brightness: {percent}%",
@@ -133,7 +127,7 @@
             "critical": 10
         },
         "tooltip": true,
-        "on-click": "2"
+        "on-click": ""
     },
 
     "network": {
@@ -142,8 +136,8 @@
         "tooltip": true,
         "tooltip-format": "{ifname} / {ipaddr}/{cidr}",
         "tooltip-format-ethernet": "󰈀 Connected to Ethernet.\n{ifname} / {ipaddr}/{cidr}",
-        "tooltip-format-wifi": "  Connected to Wifi.\n{ifname} / {ipaddr}/{cidr} - {essid} ({signalStrength}%)",
-        "format-wifi": "   {essid} ({frequency}Ghz)   {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "tooltip-format-wifi": "  Connected to {essid} ({frequency}Ghz)\n{ifname} / {ipaddr}/{cidr} - ({signalStrength}%)",
+        "format-wifi": "   {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-ethernet": "󰈀 {ipaddr}   {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-linked": "󰈀  No IP  {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-disconnected": "Not Connected :(",
@@ -154,8 +148,8 @@
         "tooltip": true,
         "scroll-step": 5,
         "format": "{icon}  {volume}%",
-        "tooltip-format": "{icon}  {volume}% {format_source}",
-        "format-bluetooth": " {volume}% {format_source}",
+        "tooltip-format": "{icon}  {volume}%",
+        "format-bluetooth": " {volume}%",
         "format-bluetooth-muted": "",
         "format-muted": "",
         "format-source": " {volume}%",
