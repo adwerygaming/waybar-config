@@ -101,10 +101,10 @@
 
     "custom/backlight": {
         "interval": 1,
-        "exec": "./modules/comps/backlight.sh",
-        "on-click": "./modules/comps/backlight-set.sh flip",
-        "on-scroll-up": "./modules/comps/backlight-set.sh up",
-        "on-scroll-down": "./modules/comps/backlight-set.sh down"
+        "exec": "~/.config/waybar/modules/comps/backlight.sh",
+        "on-click": "~/.config/waybar/modules/comps/backlight-set.sh flip",
+        "on-scroll-up": "~/.config/waybar/modules/comps/backlight-set.sh up",
+        "on-scroll-down": "~/.config/waybar/modules/comps/backlight-set.sh down"
     },
 
     "backlight": {
