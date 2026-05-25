@@ -6,6 +6,13 @@
     "modules-center": ["clock"],
     "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "custom/backlight", "battery", "custom/wattusage", "tray"],
 
+    "tray": {
+        "icon-size": 18,
+        "spacing": 10,
+        "show-passive-items": true,
+        "tooltip": true
+    },
+
     "hyprland/workspaces": {
         "disable-scroll": false,
         "all-outputs": true,
@@ -26,6 +33,7 @@
         "exec": "~/.config/waybar/modules/toggle-idle.sh",
         "on-click": "~/.config/waybar/modules/toggle-idle.sh",
         "signal": 8,
+        "interval": 1,
         "tooltip": true
     },
 
@@ -92,7 +100,8 @@
         "interval": 1,
         "format": " {free}",
         "tooltip": true,
-        "tooltip-format": "Disk (/): {percentage_used}% used | {used} out of {total} ({free} free)",        "states": {
+        "tooltip-format": "Disk (/): {percentage_used}% used | {used} out of {total} ({free} free)",
+        "states": {
             "critical": 97
         },
         "on-scroll-up": "",

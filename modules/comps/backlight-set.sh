@@ -19,7 +19,7 @@ case "$action" in
         if [ "$brightness" -ge 1 ]; then
             brightnessctl set 0;
         else    
-            brightnessctl set 255;
+            brightnessctl set 61680;
         fi
         ;;
     *)
