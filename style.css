@@ -35,7 +35,7 @@
 }
 
 window#waybar {
-    background-color: @bg-color-0
+    background-color: rgba(0, 0, 0, 0);
 }
 
 window#waybar.empty {
@@ -50,7 +50,7 @@ window#waybar.empty #window {
 }
 
 #workspaces {
-    background-color: @bg-color-0
+    /* background-color: rgba(0, 0, 0, 0.412); */
 }
 
 #workspaces button {
@@ -68,7 +68,6 @@ window#waybar.empty #window {
 }
 
 #workspaces button.focused {
-    background-color: @bg-color;
     border-bottom: 3px solid @fg-color;
 }
 
@@ -85,45 +84,45 @@ window#waybar.empty #window {
     padding: 0 4px;
     margin: 0 4px;
 }
-
+/* 
 #mode {
     padding: 0 4px;
     margin: 0 4px;
-    background-color: @bg-color;
+    background-color: rgba(0, 0, 0, 0.412);
     border-bottom: 3px solid @fg-color;
-}
+} */
 
 #tray {
     padding: 0 2px;
     margin: 0 2px;
-    background-color: @bg-color-tray;
+    /* background-color: @bg-color-tray; */
     color: @fg-color;
 }
 
 #clock {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-0;
+    /* background-color: @bg-color-0; */
     color: @fg-color;
 }
 
 #backlight {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-3;
+    /* background-color: @bg-color-3; */
     color: @fg-color;
 }
 
 #battery {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-4;
+    /* background-color: @bg-color-4; */
     color: @fg-color;
 }
 
 #battery.charging {
     color: @fg-color;
-    background-color: @bg-color;
+    /* background-color: rgba(0, 0, 0, 0.412); */
 }
 
 #battery.warning:not(.charging) {
@@ -165,42 +164,42 @@ window#waybar.empty #window {
 #network {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-6;
+    /* background-color: @bg-color-6; */
     color: @fg-color;
 }
 
 #bluetooth {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-6;
+    /* background-color: @bg-color-6; */
     color: @fg-color;
 }
 
 #pulseaudio {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-12;
+    /* background-color: @bg-color-12; */
     color: @fg-color;
 }
 
 #cpu {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-13;
+    /* background-color: @bg-color-13; */
     color: @fg-color;
 }
 
 #disk {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-13;
+    /* background-color: @bg-color-13; */
     color: @fg-color;
 }
 
 #memory {
     padding: 0 2px;
     margin: 0 4px;
-    background-color: @bg-color-5;
+    /* background-color: @bg-color-5; */
     color: @fg-color;
 }
 
@@ -212,7 +211,7 @@ window#waybar.empty #window {
 }
 
 label:focus {
-    background-color: @bg-color;
+    background-color: rgba(0, 0, 0, 0.412);
 }
 
 #network.disconnected {
@@ -229,7 +228,7 @@ label:focus {
 }
 
 #custom-media.custom-vlc {
-    background-color: @bg-color;
+    background-color: rgba(0, 0, 0, 0.412);
 }
 
 #temperature.critical {
