@@ -19,15 +19,16 @@
 @define-color bg-color-16 rgb(0, 0, 0);
 
 @define-color fg-color rgb(248, 248, 242);
-@define-color alert-bg-color rgb(255, 85, 85);
+@define-color alert-bg-color rgba(255, 85, 85, 0.506);
 @define-color alert-fg-color rgb(248, 248, 242);
 @define-color inactive-fg-color rgb(144, 153, 162);
 @define-color inactive-bg-color rgb(68, 71, 90);
+@define-color warning-bg-color rgba(255, 166, 0, 0.506);
 
 * {
     border: none;
     border-radius: 0;
-    font-family: Dejavu Sans, FontAwesome, Material Icons, sans-serif;
+    font-family: "Font Awesome 6 Free", "Dejavu Sans", "Material Icons", sans-serif;
     font-size: 13px;
     min-height: 26px;
     opacity: 1.0;
@@ -49,9 +50,9 @@ window#waybar.empty #window {
     background-color: transparent;
 }
 
-#workspaces {
-    /* background-color: rgba(0, 0, 0, 0.412); */
-}
+/* #workspaces {
+    background-color: rgba(0, 0, 0, 0.412);
+} */
 
 #workspaces button {
     padding: 0 5px;
@@ -93,7 +94,7 @@ window#waybar.empty #window {
 } */
 
 #tray {
-    padding: 0 2px;
+    padding: 2 2px;
     margin: 0 2px;
     /* background-color: @bg-color-tray; */
     color: @fg-color;
@@ -203,23 +204,14 @@ window#waybar.empty #window {
     color: @fg-color;
 }
 
-@keyframes blink {
-    to {
-        background-color: @fg-color;
-        color: @bg-color;
-    }
-}
-
 label:focus {
     background-color: rgba(0, 0, 0, 0.412);
 }
 
 #network.disconnected {
     background-color: @alert-bg-color;
-}
-
-#custom-wg.disconnected {
-    background-color: @alert-bg-color;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #pulseaudio.muted {
@@ -227,27 +219,30 @@ label:focus {
     color: @inactive-fg-color;
 }
 
-#custom-media.custom-vlc {
-    background-color: rgba(0, 0, 0, 0.412);
-}
-
-#temperature.critical {
-    background-color: @alert-bg-color;
+@keyframes blink {
+    to {
+        background-color: @fg-color;
+        color: @bg-color;
+    }
 }
 
 #cpu.warning,
+#temperature.warning,
 #memory.warning {
-    background-color: rgba(255, 165, 0, 0.8);
+    background-color: @warning-bg-color;
     color: @fg-color;
+    padding-left: 4px;
+    padding-right: 4px;
 }
 
 #cpu.critical,
 #memory.critical,
+#temperature.critical
 #disk.critical {
     background-color: @alert-bg-color;
     color: @fg-color;
     animation-name: blink;
-    animation-duration: 0.5s;
+    animation-duration: 0.2s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;

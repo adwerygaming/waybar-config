@@ -4,13 +4,49 @@
     "position": "top",
     "modules-left": ["hyprland/workspaces", "custom/window"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "custom/backlight", "battery", "custom/wattusage", "tray"],
+    "modules-right": ["network", "group/hardware", "bluetooth","pulseaudio", "custom/backlight", "battery", "custom/wattusage", "tray", "custom/notification"],
 
     "tray": {
         "icon-size": 18,
         "spacing": 10,
         "show-passive-items": true,
         "tooltip": true
+    },
+
+    "custom/asus-profile": {
+        "exec": "~/.config/waybar/modules/asus-profile.sh",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "~/.config/waybar/modules/asus-profile.sh cycle",
+        "signal": 8
+    },
+
+    "custom/fans": {
+        "exec": "~/.config/waybar/modules/fan-speed.sh",
+        "return-type": "json",
+        "interval": 2,
+        "tooltip": true
+    },
+
+    "custom/notification": {
+        "tooltip": false,
+        "format": "{icon}  ",
+        "format-icons": {
+            "notification": "<span foreground='red'><sup></sup></span>",
+            "none": "",
+            "dnd-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-none": "",
+            "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "inhibited-none": "",
+            "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+            "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
     },
 
     "hyprland/workspaces": {
@@ -23,6 +59,9 @@
 		"orientation": "horizontal",
 		"modules": [
 			"cpu",
+            "temperature",
+            "custom/asus-profile",
+            "custom/fans",
 			"memory",
 			"disk"
 		]
@@ -82,9 +121,20 @@
         "on-scroll-down": ""
     },
 
+    "temperature": {
+        "interval": 2,
+        "format": "({temperatureC}°C)",
+        "hwmon-path-abs": "PASTE_YOUR_NEW_PATH_HERE",
+        "input-filename": "temp1_input",
+        "format-critical": "({temperatureC}°C)",
+        "warning-threshold": 80,
+        "critical-threshold": 90
+    },
+
     "memory": {
         "interval": 1,
-        "format": "  {used} GiB",
+        // "format": "  {used} GiB",
+        "format": "  {used} GiB",
         "tooltip": true,
         "tooltip-format": "Memory: {}% | {used} / {total} GiB",
         "states": {
@@ -146,7 +196,7 @@
         "tooltip-format": "{ifname} / {ipaddr}/{cidr}",
         "tooltip-format-ethernet": "󰈀 Connected to Ethernet.\n{ifname} / {ipaddr}/{cidr}",
         "tooltip-format-wifi": "  Connected to {essid} ({frequency}Ghz)\n{ifname} / {ipaddr}/{cidr} - ({signalStrength}%)",
-        "format-wifi": "   {bandwidthDownBytes}  {bandwidthUpBytes}",
+        "format-wifi": "  {essid}   {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-ethernet": "󰈀 {ipaddr}   {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-linked": "󰈀  No IP  {bandwidthDownBytes}  {bandwidthUpBytes}",
         "format-disconnected": "Not Connected :(",
